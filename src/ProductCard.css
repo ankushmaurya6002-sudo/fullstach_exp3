@@ -1,0 +1,53 @@
+.card {
+  background: white;
+  width: 260px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.image-container {
+  background: #eef1f5;
+  height: 150px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.image-container img {
+  max-height: 90px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px 0 5px;
+}
+
+h3 {
+  margin: 5px 0 15px;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.in {
+  background: #d4edda;
+  color: #155724;
+}
+
+.out {
+  background: #f8d7da;
+  color: #721c24;
+}
