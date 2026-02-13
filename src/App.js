@@ -1,65 +1,28 @@
 import React from "react";
-import ProductCard from "./ProductCard";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Library from "./pages/Library";
+import Hierarchy from "./pages/Hierarchy";
 import "./App.css";
 
 function App() {
-  const products = [
-    {
-      id: 1,
-      name: "Wireless Headphones",
-      price: 129.99,
-      image: "https://via.placeholder.com/100",
-      inStock: true,
-    },
-    {
-      id: 2,
-      name: "Mechanical Keyboard",
-      price: 89.99,
-      image: "https://via.placeholder.com/100",
-      inStock: false,
-    },
-    {
-      id: 3,
-      name: "Smart Watch",
-      price: 199.99,
-      image: "https://via.placeholder.com/100",
-      inStock: true,
-    },
-    {
-      id: 4,
-      name: "Gaming Mouse",
-      price: 59.99,
-      image: "https://via.placeholder.com/100",
-      inStock: true,
-    },
-    {
-      id: 5,
-      name: "Bluetooth Speaker",
-      price: 149.99,
-      image: "https://via.placeholder.com/100",
-      inStock: false,
-    },
-    {
-      id: 6,
-      name: "Laptop Stand",
-      price: 39.99,
-      image: "https://via.placeholder.com/100",
-      inStock: true,
-    },
-  ];
-
   return (
-    <div className="container">
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          name={product.name}
-          price={product.price}
-          image={product.image}
-          inStock={product.inStock}
-        />
-      ))}
-    </div>
+    <Router>
+      <nav className="navbar">
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/library">Library</Link>
+        <Link to="/hierarchy">Hierarchy</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/library" element={<Library />} />
+        <Route path="/hierarchy" element={<Hierarchy />} />
+      </Routes>
+    </Router>
   );
 }
 
