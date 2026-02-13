@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Library from "./pages/Library";
@@ -8,7 +8,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename="/fullstach_exp3">
+    <Router>
       <nav className="navbar">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/products">Products</NavLink>
@@ -22,7 +22,7 @@ function App() {
         <Route path="/library" element={<Library />} />
         <Route path="/hierarchy" element={<Hierarchy />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
